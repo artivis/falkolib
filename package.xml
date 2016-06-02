@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>falkolib</name>
+  <version>0.0.0</version>
+  <description>falkolib</description>
+
+  <maintainer email="dlr@ce.unipr.it">Dario Lodi Rizzini</maintainer>
+
+  <author email="kallasi@ce.unipr.it">Fabjan Kallasi</author>
+  <author email="dlr@ce.unipr.it">Dario Lodi Rizzini</author>
+
+  <license>GPLv3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>boost</depend>
+  <depend>eigen</depend>
+
+  <export>
+
+  </export>
+</package>
+
