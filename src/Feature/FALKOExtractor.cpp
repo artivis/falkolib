@@ -44,7 +44,7 @@ namespace falkolib {
         int neighSize;
         int neighSizeL;
         int neighSizeR;
-        int midIndex;
+        int midIndex = 0;
         double triangleBLength;
         double triangleHLength;
         vector<double> thetaCorner(numBeams);
@@ -238,7 +238,7 @@ namespace falkolib {
 
     void FALKOExtractor::subBeamCorner(const LaserScan& scan, int index, double radius, Point2d& p) {
         vector<Point2d> neigh;
-        int midIndex;
+        int midIndex = 0;
         scan.getNeighPoints(index, radius, neigh, midIndex);
         int neighSize = neigh.size();
 

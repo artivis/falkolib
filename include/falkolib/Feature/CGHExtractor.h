@@ -55,7 +55,7 @@ namespace falkolib {
 			descriptors.reserve(keypoints.size());
 			for (int i = 0; i < keypoints.size(); ++i) {
 				std::vector<Point2d> neigh;
-				int midIndex;
+				int midIndex = 0;
 				if (useKeypointRadius) {
 					scan.getNeighPoints(keypoints[i].index, keypoints[i].radius, neigh, midIndex);
 					CGH desc(keypoints[i].radius, circularSectorNumber);
