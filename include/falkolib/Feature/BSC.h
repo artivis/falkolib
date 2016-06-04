@@ -66,6 +66,11 @@ namespace falkolib {
 		 * @param centralPointIndex index of the central point in the neigh vector
 		 */
 		void compute(std::vector<Point2d>& neigh, int centralPointIndex);
+
+    std::vector< std::vector<uint8_t> > getGrid() const
+    {
+      return grid;
+    }
 		
 	private:
 		std::vector<std::vector<uint8_t> > grid;
