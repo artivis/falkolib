@@ -32,7 +32,7 @@ namespace falkolib {
     spectrum_(thetaNum_),
     orthoSpectrum_((thetaNum_ / 2) + (thetaNum_ % 2)),
     cosLut_(thetaNum_), sinLut_(thetaNum_) {
-        for (unsigned int i = 0; i < thetaNum_; ++i) {
+        for (int i = 0; i < thetaNum_; ++i) {
             cosLut_(i) = cos(thetaStep_ * i);
             sinLut_(i) = sin(thetaStep_ * i);
         }
@@ -46,7 +46,7 @@ namespace falkolib {
     spectrum_(thetaNum_),
     orthoSpectrum_((thetaNum_ / 2) + (thetaNum_ % 2)),
     cosLut_(thetaNum_), sinLut_(thetaNum_) {
-        for (unsigned int i = 0; i < thetaNum_; ++i) {
+        for (int i = 0; i < thetaNum_; ++i) {
             cosLut_(i) = cos(thetaStep_ * i);
             sinLut_(i) = sin(thetaStep_ * i);
         }
@@ -64,7 +64,7 @@ namespace falkolib {
         cosLut_.resize(thetaNum_);
         sinLut_.resize(thetaNum_);
 
-        for (unsigned int i = 0; i < thetaNum_; ++i) {
+        for (int i = 0; i < thetaNum_; ++i) {
             cosLut_(i) = cos(thetaStep_ * i);
             sinLut_(i) = sin(thetaStep_ * i);
         }

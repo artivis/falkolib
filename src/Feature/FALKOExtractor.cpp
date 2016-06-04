@@ -124,7 +124,7 @@ namespace falkolib {
 
         NMSKeypoint(scores, scan, 0, numBeams, NMSRadius, (scoreMax * minScoreTh / 100.0), peaks);
 
-        for (int i = 0; i < peaks.size(); ++i) {
+        for (unsigned int i = 0; i < peaks.size(); ++i) {
             FALKO kp;
             kp.index = peaks[i];
             kp.orientation = thetaCorner[peaks[i]];
@@ -173,18 +173,20 @@ namespace falkolib {
         oriR /= (size - (midIndex + 1));
         Point2d ori = oriL + oriR;
         double theta = atan2(ori(1), ori(0));
+
+        return theta;
     }
 
     void FALKOExtractor::NMSKeypoint(const std::vector<int>& scores, const LaserScan& scan, unsigned int ibeg, unsigned int iend, double radius, int minval, std::vector<int>& peaks) {
-        unsigned i, imax;
-        unsigned j, jbeg, jend, jmax;
+        unsigned int i, imax;
+        unsigned int j, jbeg, jend, jmax;
         std::vector<int> candidates;
         peaks.clear();
 
         i = ibeg;
         imax = ibeg;
         while (i < iend) {
-            int win;
+            unsigned int win;
             if (radius >= scan.ranges[i]) {
                 win = std::floor(std::asin(0.8) / scan.getAngleInc());
             } else {
@@ -215,8 +217,8 @@ namespace falkolib {
             else ++i;
         }
 
-        int i1 = 0;
-        int i2 = 0;
+        unsigned int i1 = 0;
+        unsigned int i2 = 0;
         int counter = 0;
 
         for (i1 = 0, i2 = 0; i1 < candidates.size(); ++i1) {

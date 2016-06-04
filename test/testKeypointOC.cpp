@@ -38,7 +38,7 @@
 using namespace std;
 using namespace falkolib;
 
-int main(int argc, char** argv) {
+int main(int /*argc*/, char** /*argv*/) {
     OCExtractor oe;
     oe.setAngleRes(M_PI / 180.0 * 0.25);
     oe.setTol(0.1);

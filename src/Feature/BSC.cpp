@@ -66,8 +66,8 @@ namespace falkolib {
 
 	double BSC::HammingDistance(const std::vector<std::vector<uint8_t> >& g1, const std::vector<std::vector<uint8_t> >& g2) const {
 		double diff = 0.0;
-		for (int i = 0; i < g1.size(); ++i) {
-			for (int j = 0; j < g1[i].size(); ++j) {
+		for (unsigned int i = 0; i < g1.size(); ++i) {
+			for (unsigned int j = 0; j < g1[i].size(); ++j) {
 				if (g1[i][j] != g2[i][j]) {
 					diff++;
 				}

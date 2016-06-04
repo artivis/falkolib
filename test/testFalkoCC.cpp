@@ -34,7 +34,7 @@
 using namespace std;
 using namespace falkolib;
 
-int main(int argc, char** argv) {
+int main(int /*argc*/, char** /*argv*/) {
 	LaserScan scan1(-0.003316126, 2.0 * M_PI, 1440);
 	scan1.fromRanges(testRanges);
 	LaserScan scan2(-0.003316126, 2.0 * M_PI, 1440);

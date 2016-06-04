@@ -54,7 +54,7 @@ namespace falkolib {
         /** Returns the value of Hough Transform for a specific value of theta and rho.
          * If the theta and rho are not in the domain, then it return 0.0.
          */
-        double hough(double theta, double rho) const {
+        double hough(double theta, double /*rho*/) const {
             int ith = thetaToIdx(theta);
             int irh = rhoToIdx(theta);
             if (0 <= ith && ith < hough_.rows() && 0 <= irh && irh < hough_.cols()) {
@@ -71,7 +71,7 @@ namespace falkolib {
 
         /** Returns the spectrum.
          */
-        const double spectrum(double theta) const {
+        double spectrum(double theta) const {
             int ith = thetaToIdx(theta);
             if (0 <= ith && ith < hough_.rows()) {
                 return spectrum_(ith);

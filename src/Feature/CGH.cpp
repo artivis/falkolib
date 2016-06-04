@@ -80,7 +80,7 @@ namespace falkolib {
 
 	double CGH::SymmetricChiSquaredDistance(const std::vector<double>& h1, const std::vector<double>& h2) const {
 		double sum1 = 0.0;
-		for (int i = 0; i < h1.size(); ++i) {
+		for (unsigned int i = 0; i < h1.size(); ++i) {
 			sum1 += ((h1[i] - h2[i])*(h1[i] - h2[i]) / (h1[i] + h2[i] + 0.00000001));
 		}
 		return sum1/2.0;

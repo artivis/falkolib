@@ -36,7 +36,7 @@
 using namespace std;
 using namespace falkolib;
 
-int main(int argc, char** argv) {
+int main(int /*argc*/, char** /*argv*/) {
 	FALKOExtractor fe;
 	fe.setMinExtractionRange(1);
 	fe.setMaxExtractionRange(30);

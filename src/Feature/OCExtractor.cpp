@@ -45,7 +45,7 @@ namespace falkolib {
         std::vector<int> maxima;
         OC keypoint;
         double angle, score;
-        int win;
+        //int win;
         Eigen::Affine2d rot2orth, rot2inve;
         OC kp;
 
@@ -60,7 +60,7 @@ namespace falkolib {
         // For each point, computes the corresponding corner and score
         keypointCandidates.reserve(pointRot.size());
         scores.reserve(pointRot.size());
-        for (int idx = 0; idx < pointRot.size(); ++idx) {
+        for (unsigned int idx = 0; idx < pointRot.size(); ++idx) {
             score = computeCornerScore(pointRot, idx, keypoint);
             keypointCandidates.push_back(keypoint);
             scores.push_back(score);
@@ -88,7 +88,7 @@ namespace falkolib {
 
         pointsOut.clear();
         pointsOut.reserve(pointsIn.size());
-        for (int i = 0; i < pointsIn.size(); ++i) {
+        for (unsigned int i = 0; i < pointsIn.size(); ++i) {
             p.x() = pointsIn[i].x() * ct - pointsIn[i].y() * st;
             p.y() = pointsIn[i].x() * st + pointsIn[i].y() * ct;
             pointsOut.push_back(p);
@@ -107,7 +107,7 @@ namespace falkolib {
 
     double OCExtractor::computeCornerScore(const std::vector<Point2d>& pointsIn, int index, OC& keypoint) {
         vector<Point2d> neigh;
-        double range, distNeigh;
+        double /*range,*/ distNeigh;
         double score, dx, dy;
         int midIndex, orientationMax;
         int neighSize, neighSizeL, neighSizeR;
@@ -229,15 +229,15 @@ namespace falkolib {
     }
 
     void OCExtractor::NMSKeypoint(const std::vector<double>& scores, const LaserScan& scan, unsigned int ibeg, unsigned int iend, double radius, int minval, std::vector<int>& peaks) {
-        unsigned i, imax;
-        unsigned j, jbeg, jend, jmax;
+        unsigned int i, imax;
+        unsigned int j, jbeg, jend, jmax;
         std::vector<int> candidates;
         peaks.clear();
 
         i = ibeg;
         imax = ibeg;
         while (i < iend) {
-            int win;
+            unsigned int win;
             if (radius >= scan.ranges[i]) {
                 win = std::floor(std::asin(0.8) / scan.getAngleInc());
             } else {
@@ -268,8 +268,8 @@ namespace falkolib {
             else ++i;
         }
 
-        int i1 = 0;
-        int i2 = 0;
+        unsigned int i1 = 0;
+        unsigned int i2 = 0;
         int counter = 0;
 
         for (i1 = 0, i2 = 0; i1 < candidates.size(); ++i1) {
